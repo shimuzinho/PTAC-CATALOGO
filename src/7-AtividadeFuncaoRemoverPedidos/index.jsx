@@ -32,14 +32,29 @@ export default function Home() {
 
   return (
     <div>
-      {
-        listaPedidos.map((produto, index) => 
-          <div key={index}>
-            <h1>{produto.nome}</h1>
-            <img src={produto.imagem}></img>
-          </div>
-        )
-      }
+      <div>
+      <h1>Loja de Roupas muito legal</h1>
+        {
+          listaProdutos.map((produto, index) =>
+            <div key={index}>
+              <h1>{produto.nome}</h1>
+              <img src={produto.imagem}></img>
+              <button onClick={() => adicionarItemPedidos(produto)}>Adicionar ao Carrinho</button>
+            </div>
+          )
+        }
+      </div>
+      <div>
+        {
+          listaPedidos.map((produto, index) => {
+            <div key={index}>
+              <h1>{produto.nome}</h1>
+              <img src={produto.imagem}></img>
+            </div>
+          }
+          )
+        }
+      </div>
     </div>
 
   );

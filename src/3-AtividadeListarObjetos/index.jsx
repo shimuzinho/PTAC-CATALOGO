@@ -20,6 +20,7 @@ export default function Home() {
   console.log(listaProdutos)
   return (
     <div>
+      <h1>Loja de Roupas muito legal</h1>
       {
         listaProdutos.map((produto, index) => 
           <div key={index}>
