@@ -27,7 +27,19 @@ export default function Home() {
   }
 
   const removerItemPedidos = (objeto) => {
-    let novaLista = listaPedidos.filter(produto => produto != objeto)
+    let controlador = false
+    let novaLista = listaPedidos.filter((produto) => {
+      if (controlador == false) {
+          if (produto.id == objeto.id) {
+              controlador = true
+              return false
+          } else {
+              return true
+          }
+      } else {
+          return true
+      }
+  })
     setListaPedidos(novaLista)
   }
 
@@ -46,6 +58,7 @@ export default function Home() {
         }
       </div>
       <div>
+        <h1>Pedidos:</h1>
         {
           listaPedidos.map((produto, index) => 
             <div key={index}>
