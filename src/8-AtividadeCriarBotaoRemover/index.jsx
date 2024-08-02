@@ -5,6 +5,8 @@
 // No conteúdo do botão, coloque o texto "Remover".
 
 import { useState } from "react";
+import Header from "./Components/Header"
+import Footer from "./Components/Footer"
 
 export default function Home() {
   const [listaProdutos, setListaProdutos] = useState([{
@@ -45,9 +47,11 @@ export default function Home() {
 
   return (
     <div>
+    <Header title={"Sou um Header muito bonito"}/>
+    <div>
       <div>
       <h1>Loja de Roupas muito legal</h1>
-        {
+       <div> {
           listaProdutos.map((produto, index) =>
             <div key={index}>
               <h1>{produto.nome}</h1>
@@ -56,9 +60,11 @@ export default function Home() {
             </div>
           )
         }
+        </div>
       </div>
       <div>
         <h1>Pedidos:</h1>
+        <div>
         {
           listaPedidos.map((produto, index) => 
             <div key={index}>
@@ -68,7 +74,10 @@ export default function Home() {
             </div>
           )
         }
+        </div>
       </div>
+      </div>
+      <Footer desenvolvedor={"Pedro Rossini Lanutti de Moraes"}/>
     </div>
   );
 }
